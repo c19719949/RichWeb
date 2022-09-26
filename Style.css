@@ -1,0 +1,40 @@
+  
+.grid {
+    display: grid;
+    
+    
+    border: 1px solid black;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100%;
+
+    grid-template-areas: "....";
+   
+    
+}
+
+
+@media (max-height:720px){
+    
+    .grid {
+        display: grid;
+        
+        grid-template-columns: 50% 50% ;
+        
+        grid-template-rows: 50% 50%;
+        
+        grid-template-areas: "..";
+    }
+    }
+    
+    
+@media (max-height:360px){
+    
+    .grid {
+        display: grid;
+        grid-template-columns:100%;
+        
+        grid-template-rows: 25% 25% 25% 25%;
+        grid-template-areas: ".";
+        
+    }
+    }
