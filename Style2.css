@@ -1,0 +1,43 @@
+
+
+body{
+    background-color: azure;
+}
+
+
+
+.create_section{
+    width: 500px;
+    margin: 0 auto;
+    background-color: #a6b7ff;
+    border-radius: 25px;
+    min-height: 200px;
+    max-height:50%;
+    
+}
+.note
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#content{
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0 auto;
+}
+
+#display_section
+{
+    margin: 0 auto;
+    max-width: 500px;
+    border-radius: 25px;
+
+}
+
+#submit
+{
+    min-width: 100px;
+}
