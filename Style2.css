@@ -41,3 +41,16 @@ body{
 {
     min-width: 100px;
 }
+
+p
+{
+    max-width: 100px
+}
+textarea
+{
+    max-width: 100px
+}
+#deleteButton
+{
+    max-width: 100px
+}

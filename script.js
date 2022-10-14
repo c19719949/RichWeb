@@ -1,11 +1,10 @@
-const addnote = document.querySelector(".create_section");
-rectangles = document.querySelector(".note");
+const addnote = document.querySelector("#colour");
 textspace = document.querySelector("#input");
 addbutton = document.querySelector("#submit");
 n_name = document.querySelector("input");
 n_content = document.querySelector("textarea");
 display = document.querySelector("#displaysection");
-colourbtng = document.querySelector("#greenButton");
+colourbtng = document.getElementById("greenButton");
 colourbtnp = document.querySelector("#purpleButton");
 const notes = JSON.parse(localStorage.getItem("notes") || "[]");
 show_all_notes();
@@ -39,23 +38,22 @@ function show_all_notes()
     document.querySelectorAll(".note").forEach(note => note.remove());
     notes.forEach((note, index) => {
 
-                let list = `<li class = "note">
+                let list = `<li class = "note" id = "rectangle" >
                 <p>${note.note_title}</p>
                 
                 <textarea>${note.contents}</textarea>
                 <button id = "deleteButton">Delete Note</button>
-                <button id = "greenButton">Set Colour To Green</button>
-                <button id = "purpleButton">Set Colour To Purple</button>
+
         
-        `;
+                `;
         //console.log("index" + index);
         addnote.insertAdjacentHTML("afterend", list);
         addDelete(index);
-      //  addcolours();
+        addcolours();
         
         
     });
-    
+    addcolours();
 
 }
 function addDelete(index){
@@ -64,8 +62,6 @@ function addDelete(index){
         //console.log("thirdIndex"+index);
         deleteBtn = document.querySelector("#deleteButton");
         deleteBtn.addEventListener("click", () => {
-        //console.log("here"+index);
-        //console.log(note.note_title);
         deleteNote(index);
     });
     
@@ -79,9 +75,12 @@ function deleteNote(ID)
     show_all_notes();
 }
 
-// function addcolours()
-// {
-//    colourbtng.addEventListener("click", () => {
-//         rectangles.style.backgroundcolor = 'green';
-//    });
-// }
+function addcolours(){
+    colourbtng.addEventListener("click", () => {
+    document.getElementById("rectangle").style.backgroundColor = "green";
+});
+
+colourbtnp.addEventListener("click", () => {
+    document.getElementById("rectangle").style.backgroundColor = "purple"
+});
+}
