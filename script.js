@@ -4,8 +4,8 @@ addbutton = document.querySelector("#submit");
 n_name = document.querySelector("input");
 n_content = document.querySelector("textarea");
 display = document.querySelector("#displaysection");
-colourbtng = document.getElementById("greenButton");
-colourbtnp = document.querySelector("#purpleButton");
+
+
 const notes = JSON.parse(localStorage.getItem("notes") || "[]");
 show_all_notes();
 addbutton.addEventListener("click", () => {
@@ -76,11 +76,12 @@ function deleteNote(ID)
 }
 
 function addcolours(){
+    colourbtng = document.getElementById("greenButton");
+    colourbtnp = document.querySelector("#purpleButton");
     colourbtng.addEventListener("click", () => {
-    document.getElementById("rectangle").style.backgroundColor = "green";
-});
-
-colourbtnp.addEventListener("click", () => {
-    document.getElementById("rectangle").style.backgroundColor = "purple"
-});
+        document.getElementById("rectangle").style.backgroundColor = "green";
+    });
+    colourbtnp.addEventListener("click", () => {
+        document.getElementById("rectangle").style.backgroundColor = "purple";
+    });
 }
